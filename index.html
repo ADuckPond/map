@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>US MAP DEMO</title>
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+
+        <script src="js/lib/raphael.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+        <script src="js/color.jquery.js"></script>
+        <script src="js/jquery.usmap.js"></script>
+
+        <script>
+            $(document).ready(function() {
+              $('#map').usmap({
+                'stateSpecificStyles': {
+                  'AK' : {fill: '#f00'}
+                },
+                'stateSpecificHoverStyles': {
+                  'HI' : {fill: '#ff0'}
+                },
+                
+                'mouseoverState': {
+                  'HI' : function(event, data) {
+                    //return false;
+                  }
+                },
+                
+                
+                'click' : function(event, data) {
+                  $('#alert')
+                    .text('Click '+data.name+' on map 1')
+                    .stop()
+                    .css('backgroundColor', '#ff0')
+                    .animate({backgroundColor: '#ddd'}, 1000);
+                }
+              });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="top">
+            <div id="textWrapper">
+                <h1>TEMPORARY TEXT HOLDER</h1>
+            </div>
+        </div>
+        <div id="content">
+            <div id="map">
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+/* commonCss.css */
+
+/* DEFAULTS */
+html{
+	height:100%;
+    font-size:100%;
+}
+body{
+	margin:0;
+	height:100%;
+	font-family: 'Quattrocento Sans', sans-serif;
+}
+h1{
+	font-size:2rem;
+	margin:0;
+}
+img{
+    max-width:100%;
+    max-height:100%;
+}
+
+/* Classes */
+
+/* ID's */
+
+#top{
+	height:5%;
+	width:100%;
+	position:relative;
+    border-bottom:solid .1rem;
+    border-color:lightgrey;
+}
+#content{
+    position:absolute;
+    top:5%;
+    right:0;
+    bottom:0;
+    left:0;
+    border-left:solid 1rem;
+    border-right:solid 1rem;
+    border-bottom:solid 1rem;
+    border-color:white;
+}
