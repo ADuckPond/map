@@ -10,7 +10,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- <script src="js/color.jquery.js"></script> -->
         <script src="js/jquery.usmap.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+        <script src="js/lib/Chart.min.js"></script>
 
         <script>
             $(document).ready(function() {
@@ -21,8 +22,12 @@
     </head>
     <body>
         <div id="top">
-            <div id="textWrapper">
-                <h1>HOLDER</h1>
+            <div class="form">
+                <form autocomplete="off" id="queryForm" method="post">
+                    <label for="query">How do people feel about:</label>
+                    <input type="text" name="queryValue" placeholder="Query here..."/>
+                    <button id="queryButton" type="submit" name="submit" value="Submit">Submit</button>
+                </form>
             </div>
         </div>
         <div id="content">
@@ -34,3 +39,5 @@
         <script src="js/myChart.js"></script>
     </body>
 </html>
+
+console.log(ctx);
