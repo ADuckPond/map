@@ -1,19 +1,40 @@
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
+var ctx = $('#myChart');
+console.log(ctx);
 
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
+var jsonObject = { "positive": 30, "neutral": 40, "negative": 50, "query": "election"}
+loadChart(jsonObject)
 
-    // Configuration options go here
-    options: {}
-});
+function loadChart(jsonObject){
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+        // The data for our dataset
+        data: {
+            labels: [
+                'Negative',
+                'Neutral',
+                'Positive'
+            ],
+            datasets: [{
+                data: [jsonObject.negative, jsonObject.neutral, jsonObject.positive],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.3)',
+                    'rgba(255, 206, 86, 0.3)',
+                    'rgba(75, 192, 192, 0.3)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)'
+                ]
+            }],
+        },
+        // Configuration options go here
+        options: {
+            title: {
+                display: true,
+                text: (jsonObject.query + " chart").toUpperCase()
+            }
+        }
+    });
+}
