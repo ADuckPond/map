@@ -20,9 +20,17 @@ a:hover, a:visited, a:link, a:active{
 }
 
 /* ID's */
-
 #map{
 	height:100%;
+	width:50%;
+	float:left;
+}
+#right{
+	height:100%;
+	width:50%;
+	float:left;
+}
+#myChart{
 	width:100%;
 	float:left;
 }
